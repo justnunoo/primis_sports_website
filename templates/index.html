@@ -1,0 +1,381 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <style>
+        .card {
+          transition: transform 0.3s;
+        }
+    
+        .card:hover {
+          transform: scale(1.05);
+        }
+
+        .link {
+      position: absolute;
+      bottom: 60px;
+      right: 60px; 
+      padding: 15px 40px;
+      background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+      text-decoration: none;
+      color: black;
+      border-radius: 30px;
+      transition: background-color 0.3s;
+    }
+    
+    /* Link hover effect */
+    .link:hover {
+      background-color: rgba(255, 255, 255, 0.7); /* Lighter semi-transparent white */
+    }
+      </style>
+
+</head>
+<body class="container-fluid">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-sm navbar-light bg-light px-3 py-2 py-lg-4 shadow-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="#">
+                <img src="static/logo.svg" width="40" height="40" alt="">
+            </a>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- dropdown for brand -->
+            <li class="nav-item dropdown pe-4">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">PROGRAMS</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item py-2" href="#">Basketball Academy</a></li>
+                  <li><a class="dropdown-item py-2" href="#">Football Academy</a></li>
+                  <li><a class="dropdown-item py-2" href="#">Girls Only Academy</a></li>
+                  <li><a class="dropdown-item py-2" href="#">Inclusion Sports Academy</a></li>
+                  <li><a class="dropdown-item py-2" href="#">ECA Programs</a></li>
+                  <li><a class="dropdown-item py-2" href="#">Scholl Holiday Prograns</a></li>
+                </ul>
+            </li>
+              
+              <li class="nav-item pe-4">
+                <a class="nav-link" href="#">LOCATION & SCHEDULE</a>
+              </li>
+              
+              <li class="nav-item pe-4">
+                <a class="nav-link" href="#">INTER CLUB LEAGUES</a>
+              </li>
+
+              <li class="nav-item pe-4">
+                <a class="nav-link" href="#">ABOUT US</a>
+              </li>
+
+              <li class="nav-item dropdown pe-4">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">MORE</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                  <li><a class="dropdown-item" href="#">Coaches</a></li>
+                </ul>
+              </li>
+
+          </ul>
+        </div>
+        <!-- Register link outside the collapsible section -->
+        <a href="{% url 'register_trainee' %}" class="btn btn-outline-primary ml-auto px-5 py-3 rounded-pill">Register</a>
+        <!-- <button type="button" class="btn btn-outline-primary ml-auto px-5 py-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#AddProductModal">
+            Register
+        </button> -->
+        {% include 'partials/register_modal.html' %}
+          
+      </nav>
+
+    <section class="mt-4">
+        <!-- This div will contain the video and big image -->
+        <!-- <div  class="container-fluid mt-3 mt-lg-1">
+            <video autoplay muted loop id="myVideo" class="img-fluid w-100 h-100">
+                <source src="static/Sports Academy in UAE - Best in Dubai, Sharjah, Abu Dhabi.mp4" type="video/mp4">Your browser does not support HTML5 video
+            </video>
+        </div> -->
+
+        {% include  'partials/carousel.html' %}
+
+        
+        <!-- Cards -->
+        <div class="container mb-3">
+            <h1 id="heading" class="text-center fs-1 fw-bold text-uppercase mt-2 py-2"> Join Us</h1>
+            <strong><hr></strong>
+
+            <div class="row mt-4 text-center">
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/kid basketballer.webp" class="card-img-top" alt="Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 1</h5>
+                    <p class="card-text">Some text describing card 1.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/kid footbalers.webp" class="card-img-top" alt="Image 2">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 2</h5>
+                    <p class="card-text">Some text describing card 2.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/girl basketballer.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/inclusion sports.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/ECA program.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/holiday program.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                    <a class="btn btn-primary" style="width: 90%; padding: 15px 20px; border-radius: 30px;">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+
+          <!-- About us -->
+          <div class="container-fluid mb-4">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 p-5 bg-light rounded-circle">
+                    <h5 class="mb-3">
+                        ABOUT US TEAM SPORTS SERVICES
+                    </h5>
+                        
+                    <p>
+                        Originating from Australian roots, Team Sports Services (TSS) is committed to delivering specialized sports initiatives encompassing Basketball, Football, and exclusive School Holiday programs for youth aged 4-18.
+                        Additionally, TSS pioneers a unique program catered for Children and People of Determination.
+                    </p>                    
+                    <p>
+                        Our advantage lies in our expert coaches, forward-thinking training techniques, and a structured approach.
+                    </p>
+
+                    <a class="btn btn-warning rounded-pill fs-6 py-3 px-5 ms-2 my-4" href="#">ABOUT US</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="container-fluid p-0">
+            <!-- Background image with Bootstrap container class -->
+            <div class="position-relative">
+              <img src="static/TSS-WEBSITE-Basketball-Academy.webp" class="img-fluid" alt="Background Image"> <!-- Replace with your background image -->
+              <!-- Link on top of the background image -->
+              <a href="#" class="link">Click Here</a>
+            </div>
+          </div>
+
+        <div class="container-fluid mb-3">
+            <h1 id="heading" class="text-center fs-1 fw-bold text-uppercase mt-5 py-2">Program Schedule</h1>
+            <strong><hr></strong>
+
+            <div class="row mt-4 text-center">
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/swimming lesson3.jpg" class="card-img-top" alt="Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 1</h5>
+                    <p class="card-text">Some text describing card 1.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/track lesson.jpg" class="card-img-top" alt="Image 2">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 2</h5>
+                    <p class="card-text">Some text describing card 2.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/swimming lesson2.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/tennis lesson2.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/tennies lesson1.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/kids in sports.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mb-3">
+            <h1 id="heading" class="text-center fs-1 fw-bold text-uppercase mt-5 py-2">News</h1>
+            <strong><hr></strong>
+
+            <div class="row mt-4 text-center">
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/swimming lesson3.jpg" class="card-img-top" alt="Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 1</h5>
+                    <p class="card-text">Some text describing card 1.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/track lesson.jpg" class="card-img-top" alt="Image 2">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 2</h5>
+                    <p class="card-text">Some text describing card 2.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/swimming lesson2.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/tennis lesson2.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/tennies lesson1.jpg" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="static/kids in sports.webp" class="card-img-top" alt="Image 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <p class="card-text">Some text describing card 3.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <h1 id="heading" class="text-center fs-1 fw-bold mt-3 py-2"> Meet Our Coaches</h1>
+            <strong><hr></strong>
+
+            <div class="row mt-4 mb-3">
+                {% for coach in coaches_list %}
+                    <div class="col-md-3 mb-4">
+                        <div class="card">
+                            <div class="card-header text-center bg-primary text-white">{{coach.role}}</div>
+                            <img src="{{ coach.image.url }}" class="card-img-top" alt="Image 3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{coach.name}}</h5>
+                                <a href="#" class="btn btn-outline-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="row px-3">
+            <div class="col-md-3">company license</div>
+            <div class="col-md-3">location</div>
+            <div class="col-md-3">Contact us</div>
+            <div class="col-md-3">Programs</div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Function to change background to video after 5 seconds
+        setTimeout(function() {
+          var container = document.getElementById('video-container');
+          container.style.backgroundImage = "url('static/Sports Academy in UAE - Best in Dubai, Sharjah, Abu Dhabi.mp4')"; // Replace with your video file
+        }, 5000); // 5000 milliseconds = 5 seconds
+      </script>
+</body>
+</html>
