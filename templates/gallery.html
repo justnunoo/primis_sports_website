@@ -1,0 +1,24 @@
+{% extends 'partials/base.html' %}
+{%load static %}
+
+{% block title%}
+<title>Primis Sports UAE  - Gallery</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-1">
+    <br>
+    <h1 class="mt-4 text-center">Image Gallery</h1>
+
+    <div class="row mt-3">
+        {% for filename in image_filenames %}
+        <div class="col-md-3 col-sm-6 mb-3 md-sm-4">
+            <div class="card">
+                <img src="{% static 'sample/' %}{{ filename }}" alt="{{ filename }}"/>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

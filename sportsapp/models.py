@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class coaches(models.Model):
+class Coaches(models.Model):
     name = models.CharField(max_length = 255)
     image = models.ImageField(default= "coaches_images/avatar.jpg", upload_to='coaches_images/')
     age = models.PositiveIntegerField()
@@ -38,7 +38,7 @@ class Sports(models.Model):
     def __str__(self):
         return self.name
 
-class trainees(models.Model):
+class Trainees(models.Model):
     firstName = models.CharField(max_length=40)
     lastName = models.CharField(max_length=40)
     email = models.EmailField(unique=True)

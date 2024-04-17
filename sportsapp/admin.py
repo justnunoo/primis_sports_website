@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import coaches, trainees, News, Sports
+from .models import Coaches, Trainees, News, Sports
 
 # Register your models here.
 class  CoachesAdmin(admin.ModelAdmin):
@@ -7,9 +7,9 @@ class  CoachesAdmin(admin.ModelAdmin):
     search_fields = ['name','nationality']
     list_filter = ['role', 'nationality']
     
-admin.site.register(coaches, CoachesAdmin)
+admin.site.register(Coaches, CoachesAdmin)
 
-admin.site.register(trainees)
+admin.site.register(Trainees)
 
 admin.site.register(News)
 

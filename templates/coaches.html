@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title%}
+<title>Primis Sports UAE  - Coaches</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <br>
+    <h1 class="mb-4">Meet Our Coaches</h1>
+    <div class="row">
+        {% for coach in coaches %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ coach.image.url }}" class="card-img-top" alt="{{ coach.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ coach.name }}</h5>
+                    <p class="card-text">Age: {{ coach.age }}</p>
+                    <p class="card-text">Nationality: {{ coach.nationality }}</p>
+                    <p class="card-text">Role: {{ coach.role }}</p>
+                    <p class="card-text">{{ coach.about }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

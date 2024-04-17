@@ -1,11 +1,11 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import trainees
+from .models import Trainees
 
 
 class TraineeForm(forms.ModelForm):
     class Meta:
-        model = trainees
+        model = Trainees
         fields = ['firstName', 'lastName', 'email', 'phoneNumber', 'residence', 'birthday', 'sports']
 
         widgets = {
